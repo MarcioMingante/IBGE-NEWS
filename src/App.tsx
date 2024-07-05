@@ -6,8 +6,8 @@ import Favorites from "./pages/Favorites";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={ <NavLayout /> }>
-        <Route path="/" element={ <MainPage /> } />
+      <Route path="/IBGE-NEWS/" element={ <NavLayout /> }>
+        <Route path="/IBGE-NEWS/" element={ <MainPage /> } />
         <Route path="/noticias" element={ <MainPage /> } />
         <Route path="/releases" element={ <MainPage /> } />
         <Route path="/favorites" element={ <Favorites /> } />

@@ -30,7 +30,7 @@
 2 - Com o repositorio clonado, entre no diretorio que foi criado de nome IBGE-NEWS e rode o comando `npm i` no terminal  
 3 - Ainda dentro do repositorio, abra o vsCode usando o comando `code .`  
 4 - Dentro do vsCode abra um novo terminal e rode o comando `npm run dev`  
-5 - Com isso a aplicação devera abrir e estar funcionando corretamente
+5 - Com isso a aplicação devera abrir e estar funcionando corretamente  
 
 <h3>Clonando</h3>
 
