@@ -78,18 +78,26 @@ function NewsCard({item, index}: CardType) {
 
   return (
     <div 
-      className="flex-col border rounded-xl w-80 h-64 px-3 py-2 m-5"
+      className="flex-col border-slate-900 rounded-xl w-80
+      h-64 px-3 py-2 m-5 bg-slate-600 hover:bg-slate-500
+      shadow-2xl"
       data-testid={ `${index}-info-card` }
     >
-      <h3 className="h-28 font-bold leading-5">{titulo}</h3>
+      <h3 className="h-24 font-bold leading-5">{titulo}</h3>
 
-      <section className="space-y-4">
+      <section className="h-36 space-y-4 bg-zinc-400 px-1 pt-1 rounded-lg shadow-xl">
         <p className="text-xs">{`${introducao.substring(0, 200)}...`}</p>
 
         <div className="flex flex-1 justify-between p-2">
-          <p className="text-sm italic text-red-600">{ releaseTime }</p>
+          <p className="text-sm italic font-bold">{ releaseTime }</p>
 
-          <a href={ link } target="blank">Saiba mais</a>
+          <a 
+            className="bg-green-600 px-1 border-green-700 rounded text-black hover:text-white"
+            href={ link }
+            target="blank"
+          >
+          Saiba mais
+          </a>
 
           <button
             onClick={ addNRemoveFromFavorites }
