@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { getLastNewInfo, getNewsInfo } from "../services/api";
 import { ItemType } from "../types/types";
 import NewsCard from "../components/NewsCard";
-import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function MainPage() {
   const [lastNew, setLastNew] = useState<ItemType>();
