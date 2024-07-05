@@ -1,12 +1,25 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function NavLayout() {
   return (
     <>
-      <header>
-        <nav>
-          {/* links com os filtros das noticias */}
-          <h1 className="text-2xl border-y-4">Hello world</h1>
+      <header className="flex justify-center py-4 border-y-2">
+        <nav className="space-x-10">
+          <Link to='/'>
+            All
+          </Link>
+
+          <Link to='/noticias'>
+            Notícias
+          </Link>
+
+          <Link to='/releases'>
+            Releases
+          </Link>
+
+          <Link to='/favorites'>
+            Favoritas
+          </Link>
         </nav>
       </header>
     
