@@ -28,7 +28,7 @@ function MainPage() {
       
       {/* area com os cards das noticias */}
       <section>
-        <div>
+        <div className="flex flex-wrap m-3 justify-center">
           {news.map((item, index) => (
             <NewsCard key={ index } item={ item } />
           ))}
