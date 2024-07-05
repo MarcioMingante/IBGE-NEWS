@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getNewsInfo } from "../services/api";
+import { getLastNewInfo, getNewsInfo } from "../services/api";
 import { ItemType } from "../types/types";
 import NewsCard from "../components/NewsCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function MainPage() {
+  const [lastNew, setLastNew] = useState<ItemType>();
   const [page, setPage] = useState(1);
   const [news, setNews] = useState<ItemType[]>([]);
   const { pathname } = useLocation();
@@ -31,19 +32,35 @@ function MainPage() {
     setNews(data.items);
   }
 
+  const handleLastNew = async () => {
+    const data = await getLastNewInfo();
+    return setLastNew(data);
+  }
+
   useEffect(() => {
     setPage(1);
     getFirstList();
   }, [pathname])
+  
+  useEffect(() => {
+    handleLastNew()
+  }, [])
+
+  console.log(lastNew?.imagens);
 
   return (
     <main className="flex-1">
-      {/* area da ultima noticia */}
-      <section>
-        <h2>last new</h2>
+      <section className="flex flex-col mx-8 px-8">
+        <h1 className="flex justify-center text-2xl my-8">Última notícia</h1>
+
+        <div className="">
+          <h2 className="text-xl font-bold">{ lastNew?.titulo }</h2>
+
+          <p className="text-sm">{ lastNew?.introducao }</p>
+        </div>
       </section>
       
-      <section>
+      <section className="my-8">
         <div className="flex flex-wrap m-3 justify-center">
           {news.map((item, index) => (
             <NewsCard key={ index } item={ item } />
