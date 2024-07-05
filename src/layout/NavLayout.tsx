@@ -6,7 +6,7 @@ function NavLayout() {
       <header className="flex justify-center py-4 border-y-2">
         <nav className="space-x-10">
           <Link to='/'>
-            All
+            Home
           </Link>
 
           <Link to='/noticias'>

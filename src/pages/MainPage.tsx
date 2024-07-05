@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { getLastNewInfo, getNewsInfo } from "../services/api";
 import { ItemType } from "../types/types";
 import NewsCard from "../components/NewsCard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 
 function MainPage() {
   const [lastNew, setLastNew] = useState<ItemType>();
@@ -46,17 +46,19 @@ function MainPage() {
     handleLastNew()
   }, [])
 
-  console.log(lastNew?.imagens);
-
   return (
     <main className="flex-1">
       <section className="flex flex-col mx-8 px-8">
         <h1 className="flex justify-center text-2xl my-8">Última notícia</h1>
 
-        <div className="">
+        <div className="relative space-y-5">
           <h2 className="text-xl font-bold">{ lastNew?.titulo }</h2>
 
           <p className="text-sm">{ lastNew?.introducao }</p>
+
+          <div className="flex justify-center">
+            <a href={ lastNew?.link } target="blank">Saiba mais</a>
+          </div>
         </div>
       </section>
       
