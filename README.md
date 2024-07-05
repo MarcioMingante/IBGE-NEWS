@@ -28,7 +28,7 @@
 
 Para rodar o projeto localmente
 
- 1 - Clone o repositorio usando o comando `git clone url-do-projeto` (ou chave SSH)  
+ 1 - Clone o repositorio usando o comando `git clone url-do-projeto` (ou chave SSH / ou GitHub CLI)  
  2 - Entre no diretorio que foi criado ao clonar o repositorio e rode o comando `npm install` no terminal  
  3 - Abra o projeto no vsCode usando o comando `code .`  
  4 - Dentro do vsCode abra um novo terminal e rode o comando `npm run dev`
