@@ -37,13 +37,12 @@ function MainPage() {
   }, [pathname])
 
   return (
-    <main>
+    <main className="flex-1">
       {/* area da ultima noticia */}
       <section>
         <h2>last new</h2>
       </section>
       
-      {/* area com os cards das noticias */}
       <section>
         <div className="flex flex-wrap m-3 justify-center">
           {news.map((item, index) => (
@@ -51,7 +50,6 @@ function MainPage() {
           ))}
         </div>
 
-          {/* div para paginação */}
         <div className="flex justify-around my-6">
           <button
             onClick={ handlePrevPage }
@@ -59,6 +57,10 @@ function MainPage() {
             <ChevronLeft />
           </button>
           
+          <span>
+            {page}
+          </span>
+
           <button
             onClick={ handleNextPage }
           >
