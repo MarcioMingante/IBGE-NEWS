@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CardType, ItemType } from "../types/types";
 import { Heart } from "lucide-react";
 
-function NewsCard({item}: CardType) {
+function NewsCard({item, index}: CardType) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [releaseTime, setReleaseTime] = useState('');
   const { titulo, introducao, link, data_publicacao } = item;
@@ -77,7 +77,10 @@ function NewsCard({item}: CardType) {
   }, [item])
 
   return (
-    <div className="flex-col border rounded-xl w-80 h-64 px-3 py-2 m-5">
+    <div 
+      className="flex-col border rounded-xl w-80 h-64 px-3 py-2 m-5"
+      data-testid={ `${index}-info-card` }
+    >
       <h3 className="h-28 font-bold leading-5">{titulo}</h3>
 
       <section className="space-y-4">

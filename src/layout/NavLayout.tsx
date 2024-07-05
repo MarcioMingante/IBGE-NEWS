@@ -8,19 +8,31 @@ function NavLayout() {
         data-testid="header"
       >
         <nav className="space-x-10">
-          <Link to='/'>
+          <Link 
+            data-testid="home-link"
+            to='/'
+            >
             Home
           </Link>
 
-          <Link to='/noticias'>
+          <Link 
+            data-testid="news-link"
+            to='/noticias'
+            >
             Notícias
           </Link>
 
-          <Link to='/releases'>
+          <Link 
+            data-testid="releases-link"
+            to='/releases'
+            >
             Releases
           </Link>
 
-          <Link to='/favorites'>
+          <Link 
+            data-testid="favorites-link"
+            to='/favorites'          
+          >
             Favoritas
           </Link>
         </nav>

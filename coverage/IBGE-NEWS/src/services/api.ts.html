@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.27% </span>
+                <span class="strong">75.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/29</span>
+                <span class='fraction'>22/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.27% </span>
+                <span class="strong">75.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/29</span>
+                <span class='fraction'>22/29</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,31 +96,31 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ItemType, MainAPIReturnType } from "../types/types";
 import fetchData from "./helpers/fetchData"
 &nbsp;
@@ -132,24 +132,24 @@ export const getNewsInfo = async (pathname: string, page: number) =&gt; {
 <span class="cstat-no" title="statement not covered" >    return data as MainAPIReturnType;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  if (pathname.includes('release')) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    const data = await fetchData(</span>
-<span class="cstat-no" title="statement not covered" >      `https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=6&amp;destaque=0&amp;tipo=release&amp;page=${page}`</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
+  if (pathname.includes('release')) {
+    const data = await fetchData(
+      `https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=6&amp;destaque=0&amp;tipo=release&amp;page=${page}`
+<span class="branch-0 cbranch-no" title="branch not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >    return data as MainAPIReturnType;</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   const data = await fetchData(
     `https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=6&amp;destaque=0&amp;page=${page}`
-<span class="branch-0 cbranch-no" title="branch not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >  return data as MainAPIReturnType;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  );
+  return data as MainAPIReturnType;
+}
 &nbsp;
 export const getLastNewInfo = async () =&gt; {
-  const response: MainAPIReturnType = await fetchData('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=1&amp;destaque=0&amp;introsize=600'<span class="branch-0 cbranch-no" title="branch not covered" >);</span>
-<span class="cstat-no" title="statement not covered" >  const data = response.items[0];</span>
-<span class="cstat-no" title="statement not covered" >  return data as ItemType; </span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  const response: MainAPIReturnType = await fetchData('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=1&amp;destaque=0&amp;introsize=600');
+  const data = response.items[0];
+  return data as ItemType; 
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -157,7 +157,7 @@ export const getLastNewInfo = async () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-05T15:23:19.645Z
+                at 2024-07-05T17:02:58.563Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

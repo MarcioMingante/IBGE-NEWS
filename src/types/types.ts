@@ -26,4 +26,5 @@ export type ItemType = {
 
 export type CardType = {
   item: ItemType
+  index: number
 }

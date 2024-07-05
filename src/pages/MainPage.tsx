@@ -48,7 +48,10 @@ function MainPage() {
 
   return (
     <main className="flex-1">
-      <section className="flex flex-col mx-8 px-8">
+      <section 
+        className="flex flex-col mx-8 px-8"
+        data-testid="last-new"
+      >
         <h1 className="flex justify-center text-2xl my-8">Última notícia</h1>
 
         <div className="relative space-y-5">
@@ -65,22 +68,30 @@ function MainPage() {
       <section className="my-8">
         <div className="flex flex-wrap m-3 justify-center">
           {news.map((item, index) => (
-            <NewsCard key={ index } item={ item } />
+            <NewsCard 
+              key={ index }
+              item={ item }
+              index={ index }
+            />
           ))}
         </div>
 
         <div className="flex justify-around my-6">
           <button
+            data-testid="prev-page-btn"
             onClick={ handlePrevPage }
-          >
+            >
             <ChevronLeft />
           </button>
           
-          <span>
+          <span
+            data-testid="current-page"
+          >
             {page}
           </span>
 
           <button
+            data-testid="next-page-btn"
             onClick={ handleNextPage }
           >
             <ChevronRight />
