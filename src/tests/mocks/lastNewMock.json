@@ -1,0 +1,25 @@
+{
+  "count": 5922,
+  "page": 1,
+  "totalPages": 5922,
+  "nextPage": 2,
+  "previousPage": 0,
+  "showingFrom": 1,
+  "showingTo": 1,
+  "items": [
+      {
+          "id": 40606,
+          "tipo": "Notícia",
+          "titulo": "IBGE realiza 35 atendimentos no primeiro dia da Caravana Federativa no Pará",
+          "introducao": "IBGE realiza atendimentos no primeiro dia da Caravana Federativa realizada em Belém, capital do Pará. O Instituto Brasileiro de Geografia e Estatística (IBGE) realizou nesta quinta-feira, 4, os primeiros atendimentos na Caravana Federativa do Pará, realizada no Hangar Centro de Convenções e Feiras da Amazônia, no bairro de Marco. O evento conta com a participação de mais de 30 ministérios, autarquias e órgãos do governo federal, e tem o objetivo de discutir programas, políticas e serviço públicos, a prefeitos, secretários, assessores, gestores públicos, comunidade acadêmica e movimentos...",
+          "data_publicacao": "04/07/2024 07:11:33",
+          "produto_id": 0,
+          "produtos": "",
+          "editorias": "ibge",
+          "imagens": "{\"image_intro\":\"images\\/agenciadenoticias\\/ibge\\/2024_07\\/foto-18-21-41-2.jpeg\",\"float_intro\":\"\",\"image_intro_alt\":\"\",\"image_intro_caption\":\"\",\"image_fulltext\":\"images\\/agenciadenoticias\\/ibge\\/2024_07\\/foto-18-21-41-2.jpeg\",\"float_fulltext\":\"\",\"image_fulltext_alt\":\"\",\"image_fulltext_caption\":\"\"}",
+          "produtos_relacionados": "",
+          "destaque": true,
+          "link": "http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/40606-ibge-realiza-35-atendimentos-no-primeiro-dia-da-caravana-federativa-no-para.html"
+      }
+  ]
+}
