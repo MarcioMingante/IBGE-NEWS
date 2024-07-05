@@ -23,3 +23,7 @@ export type ItemType = {
   tipo: string
   titulo: string
 }
+
+export type CardType = {
+  item: ItemType
+}

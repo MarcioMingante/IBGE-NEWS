@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getNewsInfo } from "../services/api";
 import { ItemType } from "../types/types";
+import NewsCard from "../components/NewsCard";
 
 function MainPage() {
   const [page, setPage] = useState(1);
@@ -22,12 +23,16 @@ function MainPage() {
     <main>
       {/* area da ultima noticia */}
       <section>
-        <h2>hello</h2>
+        <h2>last new</h2>
       </section>
       
       {/* area com os cards das noticias */}
       <section>
-        <h2>world</h2>
+        <div>
+          {news.map((item, index) => (
+            <NewsCard key={ index } item={ item } />
+          ))}
+        </div>
       </section>
     </main>
   );
