@@ -1,9 +1,26 @@
 import { useEffect, useState } from "react";
-import { CardType } from "../types/types";
+import { CardType, ItemType } from "../types/types";
+import { Heart } from "lucide-react";
 
 function NewsCard({item}: CardType) {
+  const [isFavorite, setIsFavorite] = useState(false);
   const [releaseTime, setReleaseTime] = useState('');
   const { titulo, introducao, link, data_publicacao } = item;
+
+  const addNRemoveFromFavorites = () => {
+    const favorites: ItemType[] = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+    const checkFavorites = favorites.filter((favorite) => favorite.id !== item.id);
+
+    if (checkFavorites.length === favorites.length) {
+      const newFavoritesList = [...favorites, item];
+      setIsFavorite(true);
+      return localStorage.setItem('favorites', JSON.stringify(newFavoritesList));
+    }
+
+    setIsFavorite(false);
+    return localStorage.setItem('favorites', JSON.stringify(checkFavorites));
+  }
 
   const timeItWasReleased = (data: string) => {
     const entrie = data.split(' ');
@@ -42,8 +59,21 @@ function NewsCard({item}: CardType) {
     }
   }
 
+  const checkIfFavorite = () => {
+    const favorites: ItemType[] = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+    const checkFavorites = favorites.find((favorite) => favorite.id === item.id);
+
+    if (checkFavorites !== undefined) {
+      return setIsFavorite(true);
+    }
+
+    return setIsFavorite(false);
+  }
+
   useEffect(() => {
     handleReleaseDate()
+    checkIfFavorite()
   }, [item])
 
   return (
@@ -58,7 +88,15 @@ function NewsCard({item}: CardType) {
 
           <a href={ link } target="blank">Saiba mais</a>
 
-          {/* botão de favorito */}
+          <button
+            onClick={ addNRemoveFromFavorites }
+          >
+            {isFavorite ? (
+              <Heart color="red" fill="red"/>
+            ) : (
+              <Heart />
+            )}
+          </button>
         </div>
       </section>
     </div>
